@@ -5,24 +5,50 @@
     <title>Meu Site Simples</title>
 </head>
 <body>
-    <button style="background-color: blueviolet;">confirma</button>
-    <div id="papel">caixa musical</div>
-    <div id="lili">caixa musical</div>
-        <div>
-                <div>
-
-                </div>
-        </div>
-
+    <input id="campo" type="text"> 
+   <button>%</button>
+    <button>CE</button>
+    <button>C</button>
+    <button>delete</button>
+    <button onclick="selecionarNumero(7)">7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>=</button>
+    <button>+</button>
 </body>  
 <style>
-    #papel {
-        background-color: greenyellow;
+    button {
+        background-color:bisque;
+        width: 50px;
+        height: 50px;
     }
-     #lili {
-        background-color:red;
+
+    button:hover{
+        background-color: rgb(220, 161, 90);
+        
     }
-    #papel {width: 500px; 
-               } 
 </style>
+<script>
+    function soma(valor1, valor2) {
+  return valor1 + valor2;
+} 
+
+function menos(valor1, valor2) {
+  return valor1 - valor2;
+}
+
+function calcular(valor1, sinal, valor2) {
+  if (sinal == "+") {
+    return soma(valor1, valor2);   
+  }
+  if (sinal == "-") {
+    return menos(valor1, valor2);
+  }
+  return "Operação não suportada.";
+}
+
+function selecionarNumero(numero){
+    document.getElementById('campo').value = document.getElementById('campo').value + numero
+}
+</script>
 </html>
