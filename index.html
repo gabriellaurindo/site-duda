@@ -6,21 +6,38 @@
 </head>
 <body>
     <input id="campo" type="text"> 
-   <button>%</button>
-    <button>CE</button>
-    <button>C</button>
-    <button>delete</button>
-    <button onclick="selecionarNumero(7)">7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>=</button>
-    <button>+</button>
+    <div class="grid">
+      <button class="divCalculadora">-</button>
+          <button class="divCalculadora" onclick="selecionarNumero(*)">*</button>
+        <button class="divCalculadora">+</button>
+        <button class="divCalculadora">/</button>
+        <button class="divCalculadora" onclick="apagar()">delete</button>
+        <button class="divCalculadora" onclick="selecionarNumero(7)">7</button>
+        <button class="divCalculadora" onclick="selecionarNumero(8)">8</button>
+        <button class="divCalculadora" onclick="selecionarNumero(9)">9</button>
+        <button class="divCalculadora" onclick="selecionarNumero(4)">4</button>
+        <button class="divCalculadora" onclick="selecionarNumero(5)">5</button>
+        <button class="divCalculadora" onclick="selecionarNumero(6)">6</button>
+        <button class="divCalculadora" onclick="selecionarNumero(1)">1</button>
+        <button class="divCalculadora" onclick="selecionarNumero(2)">2</button>
+        <button class="divCalculadora" onclick="selecionarNumero(3)">3</button>
+         <button class="divCalculadora" onclick="selecionarNumero(0)">0</button>
+       <button class="divCalculadora">=</button>
+      
+    </div>
 </body>  
 <style>
+  .grid{display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      gap: 8px; /* opcional; remova se não quiser espaçamento */
+      padding: 8px;
+    }
+    .divCalculadora {border: 1px solid #333;
+      padding: 16px;
+      box-sizing: border-box;}
     button {
         background-color:bisque;
-        width: 50px;
-        height: 50px;
     }
 
     button:hover{
@@ -49,6 +66,9 @@ function calcular(valor1, sinal, valor2) {
 
 function selecionarNumero(numero){
     document.getElementById('campo').value = document.getElementById('campo').value + numero
+}
+function apagar(){
+document.getElementById('campo').value = document.getElementById('campo').value.slice(0, -1)
 }
 </script>
 </html>
