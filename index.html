@@ -9,7 +9,7 @@
     <div class="grid">
       <button class="divCalculadora">-</button>
           <button class="divCalculadora" onclick="selecionarNumero(*)">*</button>
-        <button class="divCalculadora">+</button>
+        <button class="divCalculadora" onclick="selecionarSinal('+')">+</button>
         <button class="divCalculadora">/</button>
         <button class="divCalculadora" onclick="apagar()">delete</button>
         <button class="divCalculadora" onclick="selecionarNumero(7)">7</button>
@@ -22,7 +22,7 @@
         <button class="divCalculadora" onclick="selecionarNumero(2)">2</button>
         <button class="divCalculadora" onclick="selecionarNumero(3)">3</button>
          <button class="divCalculadora" onclick="selecionarNumero(0)">0</button>
-       <button class="divCalculadora">=</button>
+       <button class="divCalculadora"onclick="prepararCalcular()">=</button>
       
     </div>
 </body>  
@@ -46,7 +46,9 @@
     }
 </style>
 <script>
-    function soma(valor1, valor2) {
+  var numero1
+var sinal
+ function soma(valor1, valor2) {
   return valor1 + valor2;
 } 
 
@@ -66,6 +68,14 @@ function calcular(valor1, sinal, valor2) {
 
 function selecionarNumero(numero){
     document.getElementById('campo').value = document.getElementById('campo').value + numero
+}
+function selecionarSinal(sinalRecebido){
+sinal=sinalRecebido
+numero1= document.getElementById('campo').value
+ document.getElementById('campo').value = ""
+}
+function prepararCalcular(){
+   document.getElementById('campo').value =calcular(parseInt(numero1),sinal, parseInt(document.getElementById('campo').value))
 }
 function apagar(){
 document.getElementById('campo').value = document.getElementById('campo').value.slice(0, -1)
