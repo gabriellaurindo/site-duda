@@ -7,8 +7,8 @@
 <body>
     <input id="campo" type="text"> 
     <div class="grid">
-      <button class="divCalculadora">-</button>
-          <button class="divCalculadora" onclick="selecionarNumero(*)">*</button>
+        <button class="divCalculadora" onclick="selecionarSinal('-')">-</button>
+        <button class="divCalculadora" onclick="selecionarSinal('*')">*</button>
         <button class="divCalculadora" onclick="selecionarSinal('+')">+</button>
         <button class="divCalculadora">/</button>
         <button class="divCalculadora" onclick="apagar()">delete</button>
@@ -21,64 +21,74 @@
         <button class="divCalculadora" onclick="selecionarNumero(1)">1</button>
         <button class="divCalculadora" onclick="selecionarNumero(2)">2</button>
         <button class="divCalculadora" onclick="selecionarNumero(3)">3</button>
-         <button class="divCalculadora" onclick="selecionarNumero(0)">0</button>
-       <button class="divCalculadora"onclick="prepararCalcular()">=</button>
+        <button class="divCalculadora" onclick="selecionarNumero(0)">0</button>
+        <button class="divCalculadora" onclick="prepararCalcular()">=</button>
       
     </div>
 </body>  
 <style>
-  .grid{display: grid;
+.grid{display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(6, auto);
       gap: 8px; /* opcional; remova se não quiser espaçamento */
       padding: 8px;
-    }
-    .divCalculadora {border: 1px solid #333;
-      padding: 16px;
-      box-sizing: border-box;}
-    button {
-        background-color:bisque;
-    }
+}
+.divCalculadora {border: 1px solid #333;
+    padding: 16px;
+    box-sizing: border-box;}
+button {
+    background-color:bisque;
+}
 
-    button:hover{
-        background-color: rgb(220, 161, 90);
-        
-    }
+button:hover{
+    background-color: rgb(220, 161, 90);  
+}
+
 </style>
 <script>
-  var numero1
+var numero1
 var sinal
- function soma(valor1, valor2) {
+function soma(valor1, valor2) {
   return valor1 + valor2;
 } 
 
 function menos(valor1, valor2) {
   return valor1 - valor2;
 }
+function multiplicacao(valor1, valor2) {
+  return valor1 * valor2;
+}
 
 function calcular(valor1, sinal, valor2) {
   if (sinal == "+") {
     return soma(valor1, valor2);   
-  }
-  if (sinal == "-") {
+}
+  
+if (sinal == "*") {
+    return multiplicacao(valor1, valor2);
+}
+
+if (sinal == "-") {
     return menos(valor1, valor2);
-  }
+}
+
   return "Operação não suportada.";
 }
 
 function selecionarNumero(numero){
-    document.getElementById('campo').value = document.getElementById('campo').value + numero
+     document.getElementById('campo').value = document.getElementById('campo').value + numero
 }
+
 function selecionarSinal(sinalRecebido){
-sinal=sinalRecebido
-numero1= document.getElementById('campo').value
- document.getElementById('campo').value = ""
+  sinal=sinalRecebido
+  numero1= document.getElementById('campo').value
+  document.getElementById('campo').value = ""
 }
 function prepararCalcular(){
    document.getElementById('campo').value =calcular(parseInt(numero1),sinal, parseInt(document.getElementById('campo').value))
 }
 function apagar(){
-document.getElementById('campo').value = document.getElementById('campo').value.slice(0, -1)
+    document.getElementById('campo').value = document.getElementById('campo').value.slice(0, -1)
 }
 </script>
 </html>
