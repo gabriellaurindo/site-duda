@@ -1,0 +1,163 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== Header / Hero ===== */
+header {
+    position: relative;
+    height: 100vh;
+    background: url('https://picsum.photos/1600/900?random=1&green') no-repeat center center/cover;
+    color: white;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #aaffaa;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== Seção de Introdução ===== */
+.intro {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: white;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.intro p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.intro button {
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.intro button:hover {
+    background: #176617;
+}
+
+/* ===== Galeria ===== */
+.gallery {
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #228B22;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+/* ===== Botão Voltar ao Topo ===== */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #228B22;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* escondido no início */
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background: #176617;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+    .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+    grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+    font-size: 2rem;
+    }
+}
