@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="#">Identificação</a>
+        <a href="#">Login</a>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <div class="intro">
+        <h2>Catálogo</h2>
+    </div>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/400/300?random=11" alt="planta 1">
+        <img src="https://picsum.photos/400/300?random=12" alt="planta 2">
+        <img src="https://picsum.photos/400/300?random=13" alt="planta 3">
+        <img src="https://picsum.photos/400/300?random=14" alt="planta 4">
+        <img src="https://picsum.photos/400/300?random=15" alt="planta 5">
+        <img src="https://picsum.photos/400/300?random=16" alt="planta 6">
+        <img src="https://picsum.photos/400/300?random=17" alt="planta 7">
+        <img src="https://picsum.photos/400/300?random=18" alt="planta 8">
+        <img src="https://picsum.photos/400/300?random=19" alt="planta 9">
+    </div>
+
+    <footer>
+        <p>Catálogo Verde @ 2025</p>
+        <p>Desenvolvido por Maria</p>
+    </footer>
+    <button id="backToTop">↑</button>
+
+    <script>
+        const backToTop = document.getElementById("backToTop");
+
+        // Mostrar o botão só depois de rolar 300px
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
+        // Scroll suave pro topo
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
