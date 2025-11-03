@@ -35,9 +35,11 @@
     <img src="https://picsum.photos/400/300?random=16" alt="planta 6">
     <img src="https://picsum.photos/400/300?random=17" alt="planta 7">
     <img src="https://picsum.photos/400/300?random=18" alt="planta 8">
-    <img src="https://picsum.photos/400/300?random=19" alt="planta 9">
+    <img src="https://picsum.photos/400/300?random=19" alt="planta 9" id="minha-imagem">
   </div>
-
+<form>
+  <input type="file" id="minha-imagem-input">
+</form>
   <footer>
     <p>Catálogo Verde @ 2025</p>
     <p>Desenvolvido por Maria</p>
@@ -60,6 +62,19 @@
     // Scroll suave pro topo
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    const image = document.getElementById('minha-imagem');
+    const imageInput = document.getElementById('minha-imagem-input');
+    imageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      console.log("oi")
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          image.src= e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
     });
   </script>
 </body>

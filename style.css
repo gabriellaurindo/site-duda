@@ -62,7 +62,7 @@ nav a:hover {
 .intro {
     padding: 4rem 2rem;
     text-align: center;
-    background: white;
+    /*background: rgb(131, 17, 17);*/
 }
 
 .intro h2 {
