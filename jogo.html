@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Click the Monster!</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    #game-area {
+      width: 400px;
+      height: 400px;
+      border: 2px solid #000;
+      margin: auto;
+      position: relative;
+      background: #eee;
+    }
+
+    #monster {
+      width: 60px;
+      height: 60px;
+      background: red;
+      background-image: url("monstro.jpeg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the Monster!</h1>
+  <p>Pontuação: <span id="score">0</span></p>
+
+  <div id="game-area">
+    <div id="monster" onclick="clicarNoMonstro()"></div>
+  </div>
+
+  <script src="jogo.js"></script>
+</body>
+</html>
