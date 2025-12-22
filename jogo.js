@@ -4,6 +4,11 @@ const scoreDisplay = document.getElementById("score");
 
 let score = 0;
 
+
+if (localStorage.getItem("score")>0) {
+  score = localStorage.getItem("score")
+   scoreDisplay.textContent = score;
+}
 // Coloca o monstro em uma posição aleatória
 function moveMonster() {
   const areaWidth = gameArea.clientWidth;
@@ -24,6 +29,15 @@ function clicarNoMonstro() {
   score++;
   scoreDisplay.textContent = score;
   moveMonster();
+  localStorage.setItem("score",score)
+}
+function clicarNaArea(event) {
+  if (event.target != monster) {
+   score = 0
+   scoreDisplay.textContent = score;
+   localStorage.setItem("score",0)
+  }
+  
 }
 
 // Faz o monstro se mover sozinho a cada 1 segundo
